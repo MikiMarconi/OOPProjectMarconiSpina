@@ -11,7 +11,21 @@ public class Insight {
 	
 	private String title;
 	private String description;
-	private long[] values = new long[2];  
+	private long value1;
+	private long value2;  
+	
+	public long getValue1() {
+		return value1;
+	}
+	public void setValue1(long value1) {
+		this.value1 = value1;
+	}
+	public long getValue2() {
+		return value2;
+	}
+	public void setValue2(long value2) {
+		this.value2 = value2;
+	}
 	private String period;
 	
 	public String getTitle() {
@@ -26,12 +40,7 @@ public class Insight {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public long[] getValues() {
-		return values;
-	}
-	public void setValues(long[] values) {
-		this.values = values;
-	}
+	
 	public String getPeriod() {
 		return period;
 	}
