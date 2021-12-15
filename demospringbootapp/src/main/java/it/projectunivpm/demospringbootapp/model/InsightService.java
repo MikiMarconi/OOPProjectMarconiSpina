@@ -7,7 +7,5 @@ import java.util.Vector;
  */
 
 public interface InsightService {
-
-	public abstract Vector<Insight> getInsightImpl();
 	
 }
