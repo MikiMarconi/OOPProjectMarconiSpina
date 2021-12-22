@@ -7,5 +7,6 @@ import java.util.Vector;
  */
 
 public interface InsightService {
+
 	
 }

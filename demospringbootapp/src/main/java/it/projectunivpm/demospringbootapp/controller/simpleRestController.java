@@ -1,6 +1,9 @@
 package it.projectunivpm.demospringbootapp.controller;
+import it.projectunivpm.demospringbootapp.filter.Filter;
 import it.projectunivpm.demospringbootapp.model.*;
 import it.projectunivpm.demospringbootapp.service.*;
+import it.projectunivpm.demospringbootapp.service.ParsingPageImpressions.ParsingPageImpressionDayImpl;
+import it.projectunivpm.demospringbootapp.service.ParsingPageImpressions.ParsingPageImpressionWeekImpl;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,38 +19,44 @@ import org.springframework.http.ResponseEntity;
 @RestController
 public class simpleRestController {
 
+	ConnectionTotalInsightImpl Connectionimpl = new ConnectionTotalInsightImpl();
 
-	ConnectionImpl Connectionimpl = new ConnectionImpl();
-
-	@RequestMapping(value = "/page_consumptions") 
-	public ResponseEntity<Object> getInsightImpl() {
+	@RequestMapping(value = "/total_insight") 
+	public ResponseEntity<Object> getTotalInsight() {
 		Connectionimpl.saveData();
 		return new ResponseEntity<>(InsightImpl.getInsightImpl(), HttpStatus.OK);
 	}
-
-	/* 
-	 * Il numero di volte in cui le persone hanno cliccato su uno dei tuoi contenuti
-	 */
-
-	/*
-	 * @GetMapping("/page_consumptions")
-	 */
-
-	/* 
-	 * Il numero di volte in cui un contenuto della tua Pagina o relativo alla
-	 * tua Pagina e' apparso nello schermo di una persona. Sono inclusi i post, 
-	 * le storie, le inserzioni e altri contenuti o informazioni presenti sulla tua Pagina.
-	 */
-
-	/*
-	 * @GetMapping("/page_impressions")
-	 */
-
-	/* 
-	 * Il numero di nuove persone a cui piace la tua Pagina.
-	 */
-
-	/*
-	 * @GetMapping("/page_fan_adds_unique")
-	 */	
+	
+	@RequestMapping(value = "/{metric}/{period}") 
+	public ResponseEntity<Insight> getFilteredInsight(@PathVariable String metric,@PathVariable String period) {
+		Connectionimpl.saveData();
+		return new ResponseEntity<>(Search.searchByMetricAndPeriod(metric, period), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/{metric}") 
+	public ResponseEntity<Object> getInsightByMetric(@PathVariable String metric) {
+		Connectionimpl.saveData();
+		return new ResponseEntity<>(Search.searchByMetric(metric), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/insight/{statistic}") 
+	public ResponseEntity<Object> getStatistics(@PathVariable String statistic) {
+		Connectionimpl.saveData();
+		return new ResponseEntity<>(Search.searchStatsByName(statistic), HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/{metric}/{period}/{initialValue}/{finalValue}") 
+	public ResponseEntity<Object> getFilteredStatistics(@PathVariable String metric, @PathVariable String period, @PathVariable long initialValue, @PathVariable long finalValue) {
+		Connectionimpl.saveData();
+		return new ResponseEntity<>(Filter.PageFilteredByMetricAndPeriod(Search.searchByMetricAndPeriod(metric, period), initialValue, finalValue), HttpStatus.OK);
+	
+	}
+	
+	@GetMapping(value = "/{metric}/{initialValue}/{finalValue}") 
+	public ResponseEntity<Object> getFilteredStatistics(@PathVariable String metric, @PathVariable long initialValue, @PathVariable long finalValue) {
+		Connectionimpl.saveData();
+		return new ResponseEntity<>(Filter.PageFilteredByMetric(Search.searchByMetric(metric), initialValue, finalValue), HttpStatus.OK);
+	
+	}
+	
 }

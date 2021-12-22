@@ -5,23 +5,29 @@ import java.util.Vector;
 
 
 public class InsightImpl implements InsightService {
+
 	private static Vector<Insight> insightImpl = new Vector();
 
-	
+
 	/*
-	 * Questo è un metodo di configurazione , lo utilizziamo per accedere dai diversi
+	 * Questi metodi sono di configurazione, li utilizziamo per accedere dai diversi
 	 * pacchetti ad una stessa risorsa statica ossia un array di Insight(insightImpl)
 	 */
 	
 	public static Vector<Insight> getInsightImpl() {
 		return insightImpl;
 	}
+
+	public static void setInsightImpl(Vector<Insight> insightImpl) {
+		InsightImpl.insightImpl = insightImpl;
+	}
+
 	
 	/*
 	 * Somma le interazioni degli utenti negli ultimi due giorni
 	 */
 	
-	public void AddImpressionDayTotalImpressions() {
+	/*public void AddImpressionDayTotalImpressions() {
 		long sum= insightImpl.get(0).getValue1() + insightImpl.get(0).getValue2(); 
 	}
 	
@@ -56,5 +62,5 @@ public class InsightImpl implements InsightService {
 	public void AddImpressionMonthNewLikes() {
 		long sum= insightImpl.get(8).getValue1() + insightImpl.get(8).getValue2(); 
 	}
-	
+	*/
 }
