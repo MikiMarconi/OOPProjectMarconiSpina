@@ -1,19 +1,20 @@
 package it.projectunivpm.demospringbootapp.service;
 
-import it.projectunivpm.demospringbootapp.filter.Filter;
+import it.projectunivpm.demospringbootapp.exceptions.MetricNotFoundException;
+import it.projectunivpm.demospringbootapp.exceptions.MetricOrPeriodNotFoundException;
+import it.projectunivpm.demospringbootapp.exceptions.StatisticNotFoundException;
 import it.projectunivpm.demospringbootapp.model.Insight;
 import it.projectunivpm.demospringbootapp.service.ParsingPageConsumptions.*;
 import it.projectunivpm.demospringbootapp.service.ParsingPageFanAddsUnique.*;
 import it.projectunivpm.demospringbootapp.service.ParsingPageImpressions.*;
-import it.projectunivpm.demospringbootapp.stats.Statistics;
-import it.projectunivpm.demospringbootapp.stats.StatisticsUtil;
+import it.projectunivpm.demospringbootapp.stats.*;
 
 
-public class Search{
+public class Search {
 
 	private static Statistics setStats = new Statistics();
-
-	public static Insight searchByMetricAndPeriod(String metric,String period) {
+	
+	public static Insight searchByMetricAndPeriod(String metric,String period) throws MetricOrPeriodNotFoundException {
 
 		if (metric.equalsIgnoreCase(ParsingPageConsumptionsDayImpl.getInsightPageConsumptionsDay().getTitle())) {
 			if (period.equalsIgnoreCase(ParsingPageConsumptionsDayImpl.getInsightPageConsumptionsDay().getPeriod())) {
@@ -60,10 +61,12 @@ public class Search{
 				return ParsingPageFanAddsUniqueMonthImpl.getInsightPageFanAddsUniqueMonth();
 			}
 		}
-		return null;
+		throw new MetricOrPeriodNotFoundException("Metrica o periodo non valido , le metriche valide sono:\n)InsightPageConsumptions"
+				+ "\n)InsightPageImpressions\n)InsightPageFanAddsUnique\n"
+				+ "I periodi validi sono:\n)day\n)week\n)month");
 	}
 
-	public static Insight[] searchByMetric(String metric) {
+	public static Insight[] searchByMetric(String metric) throws MetricNotFoundException {
 		if (metric.equalsIgnoreCase("insightPageImpressions")) {
 			Insight[] insightPI = new Insight[3];
 			insightPI[0] = ParsingPageImpressionDayImpl.getInsightPageImpressionsDay(); 
@@ -85,11 +88,12 @@ public class Search{
 			insightPU[2] = ParsingPageFanAddsUniqueMonthImpl.getInsightPageFanAddsUniqueMonth();
 			return insightPU;
 		}
-		return null;
+		throw new MetricNotFoundException("Metrica non trovata , le metriche valide sono:\n)InsightPageConsumptions"
+				+ "\n)InsightPageImpressions\n)InsightPageFanAddsUnique");
 
 	}
 
-	public static StatisticsUtil searchStatsByName(String name) {
+	public static StatisticsUtil searchStatsByName(String name) throws StatisticNotFoundException {
 		if (name.equalsIgnoreCase("MonthlyAverageImpressions")) {
 			setStats.MonthlyAverageImpressions();
 			return setStats.getStatsU();
@@ -114,9 +118,8 @@ public class Search{
 			setStats.WeeklyAverageFanAddsUnique();
 			return setStats.getStatsU();
 		}
-		return null;
+		throw new StatisticNotFoundException("Statistica non valida , le statistiche valide sono:\n)MonthlyAverageImpressions"
+				+ "\n)WeeklyAverageImpressions\n)MonthlyAverageConsumptions\n)WeeklyAverageConsumptions"
+				+ "\n)MonthlyAverageFanAddsUnique\n)WeeklyAverageFanAddsUnique");
 	}
-
-
-
 }
