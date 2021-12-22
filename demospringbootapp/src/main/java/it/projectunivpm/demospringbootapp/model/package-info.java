@@ -1,1 +1,0 @@
-package it.projectunivpm.demospringbootapp.model;
