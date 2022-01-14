@@ -1,15 +1,21 @@
 package it.projectunivpm.demospringbootapp.model.PageConsumptions;
 
-import java.util.Vector;
-
 import it.projectunivpm.demospringbootapp.model.*;
 
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe di ordinamento
+ */
 
-public class InsightPageConsumptions extends Insight implements InsightService {
-	/*sottoclasse di Insight che utilizzeremo per ordinare il progetto*/
-	
-	public InsightPageConsumptions(String string, String string2, String string3, long i, long j) {
-		super(string, string2, string3,i ,j);
-	}	
-	
+public class InsightPageConsumptions extends Insight {
+
+	/**
+	 * Sottoclasse di Insight che utilizzeremo soltanto per ordinare il progetto
+	 */
+
+	public InsightPageConsumptions(String title, String description, String period, long value1, long value2) {
+		super(title, description, period, value1 ,value2);
+	}
 }

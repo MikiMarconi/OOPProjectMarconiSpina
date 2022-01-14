@@ -1,18 +1,14 @@
 package it.projectunivpm.demospringbootapp.model.PageConsumptions;
 
-import it.projectunivpm.demospringbootapp.model.*;
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe di ordinamento delle Insight Page Consumptions giornaliere nella quale vengono settati titolo 
+ * descrizione e periodo
+ */
 
-public class InsightPageConsumptionsDay extends InsightPageConsumptions implements InsightService {
-	
-	/*private InsightPageConsumptionsDay insightPageConsumptionsDay;
-	
-	public InsightPageConsumptionsDay getInsightPageConsumptionsDay() {
-		return insightPageConsumptionsDay;
-	}
-
-	public void setInsightPageConsumptionsDay(InsightPageConsumptionsDay insightPageConsumptionsDay) {
-		this.insightPageConsumptionsDay = insightPageConsumptionsDay;
-	}*/
+public class InsightPageConsumptionsDay extends InsightPageConsumptions {
 
 	public InsightPageConsumptionsDay(long value1, long value2) {
 		super("InsightPageConsumptions", "Day Insight Page Consumptions", "Day", value1, value2);

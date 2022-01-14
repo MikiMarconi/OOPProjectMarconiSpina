@@ -1,19 +1,15 @@
 package it.projectunivpm.demospringbootapp.model.PageImpressions;
 
-import it.projectunivpm.demospringbootapp.model.*;
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe di ordinamento delle Insight Page Consumptions giornaliere nella quale vengono settati titolo 
+ * descrizione e periodo
+ */
 
-public class InsightPageImpressionsWeek extends InsightPageImpressions implements InsightService {
-/*
-	private InsightPageImpressionsWeek insightPageImpressionsWeek;
-	
-	public InsightPageImpressionsWeek getInsightPageImpressionsWeek() {
-		return insightPageImpressionsWeek;
-	}
+public class InsightPageImpressionsWeek extends InsightPageImpressions {
 
-	public void setInsightPageImpressionsWeek(InsightPageImpressionsWeek insightPageImpressionsWeek) {
-		this.insightPageImpressionsWeek = insightPageImpressionsWeek;
-	}
-*/
 	public InsightPageImpressionsWeek(long value1, long value2) {
 		super("InsightPageImpressions", "Week Insight Page Impressions", "Week", value1, value2);
 	}

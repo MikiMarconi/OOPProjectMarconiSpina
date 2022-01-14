@@ -2,15 +2,21 @@ package it.projectunivpm.demospringbootapp.model.PageImpressions;
 
 import it.projectunivpm.demospringbootapp.model.*;
 
-import java.util.Vector;
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe di ordinamento
+ */
 
-public class InsightPageImpressions extends Insight implements InsightService {
+public class InsightPageImpressions extends Insight {
 
-	/*sottoclasse di Insight che utilizzeremo per ordinare il progetto*/
+	/**
+	 * Sottoclasse di Insight che utilizzeremo soltanto per ordinare il progetto
+	 */
 
-	public InsightPageImpressions(String string, String string2, String string3, long i, long j) {
-		super(string, string2, string3,i ,j);
+	public InsightPageImpressions(String title, String description, String period, long value1, long value2) {
+		super(title, description, period, value1 ,value2);
 	}
-
 
 }

@@ -1,20 +1,17 @@
 package it.projectunivpm.demospringbootapp.model.PageFanAddsUnique;
 
-import it.projectunivpm.demospringbootapp.model.*;
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe di ordinamento delle Insight Page Consumptions giornaliere nella quale vengono settati titolo 
+ * descrizione e periodo
+ */
 
-public class InsightPageFanAddsUniqueMonth extends InsightPageFanAddsUnique implements InsightService{
-/*
-	private InsightPageFanAddsUniqueMonth insightPageFanAddsUniqueMonth;
-	
-	public InsightPageFanAddsUniqueMonth getInsightPageFanAddsUniqueMonth() {
-		return insightPageFanAddsUniqueMonth;
-	}
+public class InsightPageFanAddsUniqueMonth extends InsightPageFanAddsUnique{
 
-	public void setInsightPageFanAddsUniqueMonth(InsightPageFanAddsUniqueMonth insightPageFanAddsUniqueMonth) {
-		this.insightPageFanAddsUniqueMonth = insightPageFanAddsUniqueMonth;
-	}
-*/
 	public InsightPageFanAddsUniqueMonth( long value1, long value2) {
 		super("InsightPageFanAddsUnique", "Month Insight Page Fan Adds Unique", "Month", value1, value2);
 	}
+	
 }
