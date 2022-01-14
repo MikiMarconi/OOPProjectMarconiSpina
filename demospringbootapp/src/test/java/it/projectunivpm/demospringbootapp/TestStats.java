@@ -2,7 +2,7 @@ package it.projectunivpm.demospringbootapp;
 
 import org.junit.jupiter.api.Test;
 
-import it.projectunivpm.demospringbootapp.exceptions.StatisticNotFoundException;
+import it.projectunivpm.demospringbootapp.Exceptions.StatisticNotFoundException;
 import it.projectunivpm.demospringbootapp.service.ConnectionTotalInsightImpl;
 import it.projectunivpm.demospringbootapp.service.Search;
 import junit.framework.TestCase;
