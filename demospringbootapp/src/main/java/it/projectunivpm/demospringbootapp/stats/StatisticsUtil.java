@@ -1,5 +1,12 @@
 package it.projectunivpm.demospringbootapp.stats;
 
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe dedicata per prendere e restituire i parametri
+ */
+
 public class StatisticsUtil {
 
 	private String name;
@@ -10,6 +17,9 @@ public class StatisticsUtil {
 		this.value = value;
 	}
 
+	/**
+	 * Getter e Setter 
+	 */
 	public String getName() {
 		return name;
 	}
