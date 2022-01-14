@@ -1,19 +1,31 @@
 package it.projectunivpm.demospringbootapp.service;
 
-import it.projectunivpm.demospringbootapp.exceptions.MetricNotFoundException;
-import it.projectunivpm.demospringbootapp.exceptions.MetricOrPeriodNotFoundException;
-import it.projectunivpm.demospringbootapp.exceptions.StatisticNotFoundException;
+import it.projectunivpm.demospringbootapp.Exceptions.MetricNotFoundException;
+import it.projectunivpm.demospringbootapp.Exceptions.MetricOrPeriodNotFoundException;
+import it.projectunivpm.demospringbootapp.Exceptions.StatisticNotFoundException;
 import it.projectunivpm.demospringbootapp.model.Insight;
 import it.projectunivpm.demospringbootapp.service.ParsingPageConsumptions.*;
 import it.projectunivpm.demospringbootapp.service.ParsingPageFanAddsUnique.*;
 import it.projectunivpm.demospringbootapp.service.ParsingPageImpressions.*;
 import it.projectunivpm.demospringbootapp.stats.*;
 
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe che cerca in base alla metrica o in base alla metrica al periodo
+ * l'insight e la restituisce, questa classe cerca e restituisce la statistica 
+ * in base al nome nella rotta
+ */
 
 public class Search {
 
 	private static Statistics setStats = new Statistics();
-	
+
+	/**
+	 * Metodo che restituisce l'insight in base alla metrica ed al periodo dati
+	 */
+
 	public static Insight searchByMetricAndPeriod(String metric,String period) throws MetricOrPeriodNotFoundException {
 
 		if (metric.equalsIgnoreCase(ParsingPageConsumptionsDayImpl.getInsightPageConsumptionsDay().getTitle())) {
@@ -66,6 +78,10 @@ public class Search {
 				+ "I periodi validi sono:\n)day\n)week\n)month");
 	}
 
+	/**
+	 * Metodo che restituisce l'insight in base alla metrica data
+	 */
+
 	public static Insight[] searchByMetric(String metric) throws MetricNotFoundException {
 		if (metric.equalsIgnoreCase("insightPageImpressions")) {
 			Insight[] insightPI = new Insight[3];
@@ -92,6 +108,10 @@ public class Search {
 				+ "\n)InsightPageImpressions\n)InsightPageFanAddsUnique");
 
 	}
+
+	/**
+	 * Metodo che restituisce una statistica in base al nome dato
+	 */
 
 	public static StatisticsUtil searchStatsByName(String name) throws StatisticNotFoundException {
 		if (name.equalsIgnoreCase("MonthlyAverageImpressions")) {

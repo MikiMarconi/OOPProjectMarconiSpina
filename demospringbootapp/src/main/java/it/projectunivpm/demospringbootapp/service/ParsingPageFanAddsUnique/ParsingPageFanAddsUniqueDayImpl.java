@@ -13,20 +13,27 @@ import it.projectunivpm.demospringbootapp.model.Insight;
 import it.projectunivpm.demospringbootapp.service.ConnectionTotalInsightImpl;
 import it.projectunivpm.demospringbootapp.model.PageFanAddsUnique.*;
 
+/**
+ * @author MichelangeloMarconi
+ * @author MarcoSpina
+ * 
+ * Classe dedicata al parsing dell'insight Page Fan Adds Unique
+ */
+
 public class ParsingPageFanAddsUniqueDayImpl extends ConnectionTotalInsightImpl {
-	
+
 	private static InsightPageFanAddsUniqueDay insightPageFanAddsUniqueDay;
 
 	@Override
 	public void parseData() {
 
-		/*
+		/**
 		 * Utilizziamo JSON simple per effettuare il parsing dei dati ricevuti
 		 */
 
 		JSONParser parser = new JSONParser();
 
-		/*
+		/**
 		 * Apriamo uno stream di input dal file su cui abbiamo salvato i dati
 		 */
 
@@ -34,7 +41,7 @@ public class ParsingPageFanAddsUniqueDayImpl extends ConnectionTotalInsightImpl 
 		try {
 			reader = new FileReader("salvadati.txt");
 
-			/*
+			/**
 			 * Attraverso la creazione di JSONobject e JSONArray accediamo all'interno
 			 * della struttura annidata del nostro file JSON , utilizzando poi i setter
 			 * delle classi del pacchetto model per assegnare i valori ai nostri oggetti
@@ -44,10 +51,8 @@ public class ParsingPageFanAddsUniqueDayImpl extends ConnectionTotalInsightImpl 
 
 			obj = parser.parse(reader);
 
-
 			JSONObject empjsonobj = (JSONObject) obj ;
 			JSONArray array = (JSONArray)empjsonobj.get("data");
-
 			JSONObject obj2 = (JSONObject) array.get(1);
 			Insight in = new Insight();
 			JSONArray array2 = (JSONArray) obj2.get("values");
@@ -59,10 +64,10 @@ public class ParsingPageFanAddsUniqueDayImpl extends ConnectionTotalInsightImpl 
 			insightPageFanAddsUniqueDay = new InsightPageFanAddsUniqueDay(in.getValue1(), in.getValue2());
 
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
+
 			e1.printStackTrace();
 		} catch (IOException | ParseException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
