@@ -27,3 +27,24 @@ GET | /insight/{metric}/{period} | Mostra una precisa metrica in un determinato 
 GET | /insight/{metric}/{period}/{initialValue}/{finalValue} | Se il valore2 della metrica è compreso tra initial(più piccolo) e final value(più grande) , allora questa verrà mostrata | N.B. initial e final value sono due interi.
 GET | /insight/{metric}/{initialValue}/{finalValue} | Mostra una precisa metrica filtrata in base a due valori (initial e final value). | N.B. initial e final value sono due interi.
 
+## Eccezioni 
+Il programma contiene delle eccezioni personalizzate :
+* ❌ MetricNotFoundException) : se la metrica inserita non è tra quelle disponibili viene lanciata quest'eccezione, il programma provvederà poi a fornirci una lista di metriche valide e viene stampato il seguente messaggio :  
+``` 
+Metrica non trovata , le metriche valide sono: )InsightPageConsumptions )InsightPageImpressions )InsightPageFanAddsUnique 
+```
+* ❌ MetricOrPeriodNotFoundException) : se la metrica o il periodo inseriti non sono tra quelle disponibili viene lanciata quest'eccezione, il programma provvederà poi a fornirci una lista di metriche o periodi validi.
+``` 
+Metrica o periodo non valido , le metriche valide sono: )InsightPageConsumptions )InsightPageImpressions )InsightPageFanAddsUnique 
+I periodi validi sono: )day )week )month
+```
+* ❌ StatisticNotFoundException) : se la statistica inserita non è tra quelle disponibili viene lanciata quest'eccezione, il programma provvederà poi a fornirci una lista di statistiche valide.
+``` 
+Statistica non valida , le statistiche valide sono: )MonthlyAverageImpressions )WeeklyAverageImpressions )MonthlyAverageConsumptions )WeeklyAverageConsumptions )MonthlyAverageFanAddsUnique )WeeklyAverageFanAddsUnique
+```
+
+## JUnit Test
+Nel programma vengono effettuati i seguenti test : 
+* ✅ TestFilters) : Testa un metodo che ricerca tra le insights già filtrate per metrica e per periodo quelle che hanno un valore maggiore o uguale dell'initial value e minore o uguale del finale value.  
+* ✅ TestSearch) : Testa un metodo che cerca le insight filtrando per nome e per periodo.
+* ✅ TestStats) : Testa un metodo che cerca la corretta statistica in base al nome.
