@@ -1,2 +1,29 @@
 # OOPProjectMarconiSpina
-Project OOP academic year 2021/22 Univpm - Marconi Michelangelo &amp; Spina Marco
+## Introduzione
+La seguente applicazione springboot (sviluppata con **GRADLE**) ha l'obiettivo di fornire statistiche sulle insights di una pagina Facebook, permettendo di visualizzare quest'ultime nella loro totalità oppure filtrate (per *periodo*, *metrica* o *valore*).
+L'utente potrà visualizzare i risultati dell'esecuzione del programma avviando lo stesso ed utilizzando l'URL "localhost:8080/" seguito dall'endpoint specificato nelle [rotte](#rotte).
+Per utilizzare correttamente il programma :
+* 1)E' necessario avere l'access token relativo ad una pagina Facebook, se non si ha una pagina è possibile utilizzare il nostro token di prova : EAAPR8XUrBo8BAHjWG4QEhCyqNZCLR4ZCNQv5psCZC7DkTRZAoII0UP6vPs1eNj41mQ4ZAjKUYMZADXZAfANWZBku9iSlUtYf5tfPqfdZArZCtiov9G14S546NvpkVGVXTxKA3P7bkBG7PmYw9fvMD0P3QCDUwbVZCl6SDWJjF4coaZAoJh6YRLBQ6xzg
+* 2)Nella versione attuale del programma è necessario eseguire per prima la rotta [insight](#insight) (in quanto permette di salvare in locale tutte le informazioni provenienti dall'API di Facebook).
+
+
+<a name="rotte"></a>
+## Rotte
+Le insight visualizzate in formato JSON hanno una struttura standard :
+* Nome.
+* Descrizione.
+* Periodo.
+* Valore1 (Relativo a 2 giorni prima rispetto al giorno attuale).
+* Valore2 (Relativo a 1 giorno prima rispetto al giorno attuale).
+
+<a name="insight"></a>
+### Descrizione
+Tipo | Endpoint | Descrizione | Parametri
+---- | ---- | ---- | ----
+GET | /insight | E' una sorta di comando di avvio del programma , mostra le insight nella loro totalità e salva tutti i dati in un file locale. | Nessuno
+GET | /insight/{metric} |  Mostra soltanto la metrica che si sceglie. | InsightPageConsumptions ; InsightPageImpressions ; InsightPageFanAddsUnique ;
+GET | /insight/stats/{statistic} | Mostra la media di una precisa metrica all'interno del mese o settimana corrente | MonthlyAverageImpressions, WeeklyAverageImpressions ; MonthlyAverageConsumptions, WeeklyAverageConsumptions ; MonthlyAverageFanAddsUnique, WeeklyAverageFanAddsUnique;
+GET | /insight/{metric}/{period} | Mostra una precisa metrica in un determinato periodo | Day ; Week ; Month;
+GET | /insight/{metric}/{period}/{initialValue}/{finalValue} | Se il valore2 della metrica è compreso tra initial(più piccolo) e final value(più grande) , allora questa verrà mostrata | N.B. initial e final value sono due interi.
+GET | /insight/{metric}/{initialValue}/{finalValue} | Mostra una precisa metrica filtrata in base a due valori (initial e final value). | N.B. initial e final value sono due interi.
+
