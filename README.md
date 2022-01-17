@@ -3,9 +3,11 @@
 La seguente applicazione springboot (sviluppata con **GRADLE**) ha l'obiettivo di fornire statistiche sulle insights di una pagina Facebook, permettendo di visualizzare quest'ultime nella loro totalità oppure filtrate (per *periodo*, *metrica* o *valore*).
 L'utente potrà visualizzare i risultati dell'esecuzione del programma avviando lo stesso ed utilizzando l'URL "localhost:8080/" seguito dall'endpoint specificato nelle [rotte](#rotte).
 Per utilizzare correttamente il programma :
-* 1)E' necessario avere l'access token relativo ad una pagina Facebook, se non si ha una pagina è possibile utilizzare il nostro token di prova : EAAPR8XUrBo8BAHjWG4QEhCyqNZCLR4ZCNQv5psCZC7DkTRZAoII0UP6vPs1eNj41mQ4ZAjKUYMZADXZAfANWZBku9iSlUtYf5tfPqfdZArZCtiov9G14S546NvpkVGVXTxKA3P7bkBG7PmYw9fvMD0P3QCDUwbVZCl6SDWJjF4coaZAoJh6YRLBQ6xzg
+* 1)E' necessario avere l'[access token relativo ad una pagina Facebook](https://developers.facebook.com/docs/pages/access-tokens/), se non si ha una pagina è possibile utilizzare il nostro token di prova : EAAPR8XUrBo8BAHjWG4QEhCyqNZCLR4ZCNQv5psCZC7DkTRZAoII0UP6vPs1eNj41mQ4ZAjKUYMZADXZAfANWZBku9iSlUtYf5tfPqfdZArZCtiov9G14S546NvpkVGVXTxKA3P7bkBG7PmYw9fvMD0P3QCDUwbVZCl6SDWJjF4coaZAoJh6YRLBQ6xzg
 * 2)Nella versione attuale del programma è necessario eseguire per prima la rotta [insight](#insight) (in quanto permette di salvare in locale tutte le informazioni provenienti dall'API di Facebook).
 
+## Funzionamento
+Tra i file caricati nella repository vi è un file .zip il quale contiene un breve video esplicativo su tutto il funzionamento del programma e una repository di postman che è possibile importare nel proprio workspace in cui sono contenute tutte le rotte(**corrette**) che è possibile eseguire.
 
 <a name="rotte"></a>
 ## Rotte
