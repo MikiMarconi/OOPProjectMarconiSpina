@@ -1,6 +1,12 @@
 # OOPProjectMarconiSpina
 ## Introduzione
 La seguente applicazione springboot (sviluppata con **GRADLE**) ha l'obiettivo di fornire statistiche sulle insights di una pagina Facebook, permettendo di visualizzare quest'ultime nella loro totalità oppure filtrate (per *periodo*, *metrica* o *valore*).
+Le metriche scelte sono:
+* Impressions --> Il numero di volte in cui un contenuto della tua Pagina o relativo alla tua Pagina è apparso nello schermo di una persona. Sono inclusi i post, le storie, le inserzioni e altri contenuti o informazioni presenti sulla tua Pagina.
+* Consumptions --> Il numero di volte in cui le persone hanno cliccato su uno dei tuoi contenuti.
+* FanAddsUnique --> Il numero di nuove persone a cui piace la tua Pagina.
+
+
 L'utente potrà visualizzare i risultati dell'esecuzione del programma avviando lo stesso ed utilizzando l'URL "localhost:8080/" seguito dall'endpoint specificato nelle [rotte](#rotte).
 Per utilizzare correttamente il programma :
 * 1)E' necessario avere l'[access token relativo ad una pagina Facebook](https://developers.facebook.com/docs/pages/access-tokens/), se non si ha una pagina è possibile utilizzare il nostro token di prova : EAAPR8XUrBo8BAIyoPzfu21ZAR3RZA8oWUY8AekdaEnzpt85jNPiwys8MhRu6fze3HvJGJWMlX4OalsnSustHI2bld84k7Jxbo98gl5wgck9ELaXZByRcyX8FHxcM7f4pMJUyjeVXqfwtwOqewn8V5l4ueDnnzBSnVXTD5GMGgE0hZCZB8taUR
@@ -9,10 +15,13 @@ Per utilizzare correttamente il programma :
 ## Funzionamento
 Tra i file caricati nella repository vi è una cartella [FBProject](FBProject) la quale contiene un breve video esplicativo su tutto il funzionamento del programma e una repository di postman che è possibile importare nel proprio workspace in cui sono contenute tutte le rotte(**corrette**) che è possibile eseguire.
 Il funzionamento del programma è riassunto attraverso questo schema concettuale:
-![alt text](SchemaConcettuale.jpeg)
+![alt text](FBProject/SchemaConcettuale.jpeg)
+### Ordinamento
+Nella modellazione delle classi del programma è stata utilizzata una struttura piramidale per sfruttare al meglio il concetto di ereditarietà, difatti dalla *super*classe Insight ereditano 3 *sotto*classi specifiche per ogni tipo di insight e da queste ultime ereditano altre 3 classi ciascuna con l'utilità di specificare il periodo.
+Creando 3 *sotto*classi di insight ovvero Impression, Consumptions, FanAddsUnique è possibile modellare efficacemente il problema nonostante appesantisca leggermente il programma;ciò permette tuttavia di effettuare aggiornamenti in futuro con estrema semplicità e garantisce un solido ordinamento.
 
 ## Javadoc
-Per visualizzare il javadoc relativo al progetto è sufficiente aprire all'interno della cartella javadoc.zip il file "index". 
+Per visualizzare il javadoc relativo al progetto è sufficiente scaricare la cartella [javadoc.zip](javadoc.zip) e aprire il file index. 
 
 <a name="rotte"></a>
 ## Rotte
@@ -31,7 +40,7 @@ GET | /insight | E' una sorta di comando di avvio del programma , mostra le insi
 GET | /insight/{metric} |  Mostra soltanto la metrica che si sceglie. | InsightPageConsumptions ; InsightPageImpressions ; InsightPageFanAddsUnique ;
 GET | /insight/stats/{statistic} | Mostra la media di una precisa metrica all'interno del mese o settimana corrente | MonthlyAverageImpressions, WeeklyAverageImpressions ; MonthlyAverageConsumptions, WeeklyAverageConsumptions ; MonthlyAverageFanAddsUnique, WeeklyAverageFanAddsUnique;
 GET | /insight/{metric}/{period} | Mostra una precisa metrica in un determinato periodo | Day ; Week ; Month;
-GET | /insight/{metric}/{period}/{initialValue}/{finalValue} | Se il valore2 della metrica è compreso tra initial(più piccolo) e final value(più grande) , allora questa verrà mostrata | N.B. initial e final value sono due interi.
+GET | /insight/{metric}/{period}/{initialValue}/{finalValue} | Mostra un precisa metrica filtrata per periodo, valore minimo(initalValue) e valore massimo(finalValue) | N.B. initial e final value sono due interi.
 GET | /insight/{metric}/{initialValue}/{finalValue} | Mostra una precisa metrica filtrata in base a due valori (initial e final value). | N.B. initial e final value sono due interi.
 
 ## Eccezioni 
