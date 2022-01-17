@@ -28,13 +28,13 @@ public class simpleRestController {
 	ConnectionTotalInsightImpl Connectionimpl = new ConnectionTotalInsightImpl();
 
 
-	@RequestMapping(value = "/insight") 
+	@GetMapping(value = "/insight") 
 	public ResponseEntity<Object> getTotalInsight() {
 		Connectionimpl.saveData();
 		return new ResponseEntity<>(InsightImpl.getInsightImpl(), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/insight/{metric}") 
+	@GetMapping(value = "/insight/{metric}") 
 	public ResponseEntity<Object> getInsightByMetric(@PathVariable String metric) {
 		try {
 			return new ResponseEntity<>(Search.searchByMetric(metric), HttpStatus.OK);
@@ -45,7 +45,7 @@ public class simpleRestController {
 		}
 	}
 
-	@RequestMapping(value = "/insight/stats/{statistic}") 
+	@GetMapping(value = "/insight/stats/{statistic}") 
 	public ResponseEntity<Object> getStatistics(@PathVariable String statistic) {
 		try {
 			return new ResponseEntity<>(Search.searchStatsByName(statistic), HttpStatus.OK);
@@ -56,7 +56,7 @@ public class simpleRestController {
 		}
 	}
 
-	@RequestMapping(value = "/insight/{metric}/{period}") 
+	@GetMapping(value = "/insight/{metric}/{period}") 
 	public ResponseEntity<Object> getFilteredInsight(@PathVariable String metric,@PathVariable String period) throws MetricOrPeriodNotFoundException {
 		try {
 			return new ResponseEntity<>(Search.searchByMetricAndPeriod(metric, period), HttpStatus.OK);
