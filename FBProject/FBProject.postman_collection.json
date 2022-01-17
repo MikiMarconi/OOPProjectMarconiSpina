@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "ccb47982-4e17-4329-a6b1-79b882509c9d",
+		"name": "FBProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Filter",
+			"item": [
+				{
+					"name": "{metric}/{initialValue}/{finalValue}",
+					"item": [
+						{
+							"name": "insightPagefanaddsunique/0/12500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPagefanaddsunique/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPagefanaddsunique",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageimpressions/0/12500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageimpressions/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageimpressions",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageconsumptions/0/12500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageconsumptions/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageconsumptions",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "{metric}/{period}/{initialValue}/{finalValue}",
+					"item": [
+						{
+							"name": "insightPagefanaddsunique/day/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPagefanaddsunique/day/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPagefanaddsunique",
+										"day",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPagefanaddsunique/week/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPagefanaddsunique/week/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPagefanaddsunique",
+										"week",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPagefanaddsunique/moth/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPagefanaddsunique/month/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPagefanaddsunique",
+										"month",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageimpressions/day/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageimpressions/day/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageimpressions",
+										"day",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageimpressions/week/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageimpressions/week/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageimpressions",
+										"week",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageimpressions/moth/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageimpressions/month/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageimpressions",
+										"month",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageconsumptions/day/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageconsumptions/day/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageconsumptions",
+										"day",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageconsumptions/week/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageconsumptions/week/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageconsumptions",
+										"week",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightPageconsumptions/month/initialvalue/finalvalue",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightPageconsumptions/month/0/12500",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightPageconsumptions",
+										"month",
+										"0",
+										"12500"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "{metric}/{period}",
+					"item": [
+						{
+							"name": "insightpagefanaddsunique/day",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpagefanaddsunique/day",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpagefanaddsunique",
+										"day"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpagefanaddsunique/week",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpagefanaddsunique/week",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpagefanaddsunique",
+										"week"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpagefanaddsunique/month",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpagefanaddsunique/month",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpagefanaddsunique",
+										"month"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageimpressions/day",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageimpressions/day",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageimpressions",
+										"day"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageimpressions/week",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageimpressions/week",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageimpressions",
+										"week"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageimpressions/month",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageimpressions/month",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageimpressions",
+										"month"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageconsumptions/day",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageconsumptions/day",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageconsumptions",
+										"day"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageconsumptions/week",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageconsumptions/week",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageconsumptions",
+										"week"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageconsumptions/month",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageconsumptions/month",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageconsumptions",
+										"month"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "{metric}",
+					"item": [
+						{
+							"name": "insightpageconsumptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageconsumptions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageconsumptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpageimpressions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpageimpressions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpageimpressions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insightpagefanaddsunique",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/insightpagefanaddsunique",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"insightpagefanaddsunique"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Statistic",
+			"item": [
+				{
+					"name": "insight/{statistic}",
+					"item": [
+						{
+							"name": "insight/MonthlyAverageImpressions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/stats/MonthlyAverageImpressions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"stats",
+										"MonthlyAverageImpressions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insight/WeeklyAverageImpressions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/stats/WeeklyAverageImpressions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"stats",
+										"WeeklyAverageImpressions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insight/MonthlyAverageConsumptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/stats/MonthlyAverageConsumptions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"stats",
+										"MonthlyAverageConsumptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insight/WeeklyAverageConsumptions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/stats/WeeklyAverageConsumptions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"stats",
+										"WeeklyAverageConsumptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insight/MonthlyAverageFanAddsUnique",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/stats/MonthlyAverageFanAddsUnique",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"stats",
+										"MonthlyAverageFanAddsUnique"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insight/WeeklyAverageFanAddsUnique",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/insight/stats/WeeklyAverageFanAddsUnique",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"insight",
+										"stats",
+										"WeeklyAverageFanAddsUnique"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Totalinsight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/insight",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"insight"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
