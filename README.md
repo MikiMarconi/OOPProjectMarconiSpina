@@ -64,3 +64,8 @@ Nel programma vengono effettuati i seguenti test :
 * ✅ TestFilters) : Testa un metodo che ricerca tra le insights già filtrate per metrica e per periodo quelle che hanno un valore maggiore o uguale dell'initial value e minore o uguale del finale value.  
 * ✅ TestSearch) : Testa un metodo che cerca le insight filtrando per nome e per periodo.
 * ✅ TestStats) : Testa un metodo che cerca la corretta statistica in base al nome.
+
+### Autori
+Progetto realizzato da:
+- Marconi Michelangelo (50%)
+- Spina Marco (50%)
