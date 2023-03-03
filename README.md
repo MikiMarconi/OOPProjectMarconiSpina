@@ -67,5 +67,5 @@ Nel programma vengono effettuati i seguenti test :
 
 ### Autori
 Progetto realizzato da:
-- Marconi Michelangelo (50%)
-- Spina Marco (50%)
+- Marconi Michelangelo (51%)
+- Spina Marco (49%)
